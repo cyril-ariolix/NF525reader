@@ -1,6 +1,6 @@
 # NF525 — Factures présentes dans les archives
 
-Application locale pour rechercher et imprimer les factures fiscales HotSoft NF525 à partir des sauvegardes d’archives hôtelières.
+Application locale pour rechercher et imprimer les factures fiscales NF525 à partir des sauvegardes d’archives hôtelières.
 
 L’outil fonctionne **entièrement sur l’ordinateur du client** : aucune connexion Internet n’est nécessaire après l’installation. Les données restent locales dans une base SQLite (`data/hotel_group_archive.db`).
 
@@ -28,7 +28,7 @@ Remettez le dossier du projet **sans** le dossier `.venv` (il sera recréé au p
 
 | Mode | Contenu | Avantage |
 |------|---------|----------|
-| **A — Outil seul** | Dossier sans base | Léger ; le client importe ses propres exports HotSoft |
+| **A — Outil seul** | Dossier sans base | Léger ; le client importe ses propres exports NF525 |
 | **B — Prêt à l’emploi** | Dossier + `data/hotel_group_archive.db` déjà remplie | Recherche immédiate, sans attendre l’import (30–60 min) |
 
 Le mode B convient lorsque vous avez déjà importé les archives pour le client.
@@ -39,7 +39,7 @@ Le mode B convient lorsque vous avez déjà importé les archives pour le client
   - [python.org/downloads](https://www.python.org/downloads/) (Windows / Mac)  
   - Linux : souvent déjà présent ; sinon `sudo apt install python3 python3-venv`
 - **Windows** : cocher *« Add Python to PATH »* lors de l’installation
-- **Espace disque** : prévoir plusieurs Go si les archives HotSoft sont volumineuses (la base SQLite grossit avec les imports)
+- **Espace disque** : prévoir plusieurs Go si les archives NF525 sont volumineuses (la base SQLite grossit avec les imports)
 - **Navigateur** : Chrome, Edge, Firefox ou Safari récent
 
 Aucun serveur web, Docker ou MySQL n’est requis.
@@ -111,7 +111,7 @@ Laissez la fenêtre du terminal ouverte tant que vous utilisez l’application. 
 ### Parcours type
 
 1. **Démarrer** — lancer le script adapté à votre OS (`Demarrer.bat`, `.command` ou `.sh`).
-2. **Importer une sauvegarde** (si la base est vide) — dans la barre latérale, section *Importer une sauvegarde*, déposer le fichier ZIP reçu de HotSoft.  
+2. **Importer une sauvegarde** (si la base est vide) — dans la barre latérale, section *Importer une sauvegarde*, déposer le fichier ZIP d’export NF525.  
    Le nom doit ressembler à : `ExportNF525_NomHotel_FR005082.zip`  
    L’import d’une archive complète peut prendre **30 à 60 minutes** ; le compteur *Import en cours… 12 sur 2658* confirme que tout fonctionne. **Ne pas fermer la fenêtre du terminal** pendant l’import.
 3. **Rechercher** — utiliser le formulaire de recherche et les filtres de la barre latérale :
@@ -148,7 +148,7 @@ La base de données est enregistrée dans `data/hotel_group_archive.db` (créée
 | Le navigateur ne s’ouvre pas | Pare-feu ou port occupé | Ouvrir manuellement **http://localhost:8501** |
 | Page « connexion refusée » | Application non démarrée ou terminal fermé | Relancer `Demarrer.*` et garder le terminal ouvert |
 | Import bloqué ou très lent | Archive volumineuse (normal) | Attendre ; suivre le compteur dans l’interface |
-| Erreur « nom de fichier non reconnu » | ZIP renommé ou mauvais format | Utiliser le fichier `ExportNF525_….zip` tel que fourni par HotSoft, sans le renommer |
+| Erreur « nom de fichier non reconnu » | ZIP renommé ou mauvais format | Utiliser un fichier `ExportNF525_….zip` au format attendu, sans le renommer |
 | Caractères `?` dans un ancien PDF | Version antérieure de l’outil | Mettre à jour le projet ; les PDF récents utilisent l’encodage Windows (€, tirets) |
 | Demande d’e-mail / mot de passe Streamlit | Config manquante | Vérifier que le dossier `.streamlit/` est présent dans le livrable |
 
@@ -165,7 +165,7 @@ Vous pouvez adapter ce texte dans votre e-mail de livraison :
 
 > Bonjour,
 >
-> Vous trouverez ci-joint l’outil **NF525 — Factures présentes dans les archives**, qui permet de rechercher et d’exporter en PDF les factures issues de vos sauvegardes HotSoft.
+> Vous trouverez ci-joint l’outil **NF525 — Factures présentes dans les archives**, qui permet de rechercher et d’exporter en PDF les factures issues de vos sauvegardes NF525.
 >
 > **Pour démarrer**
 > - **Windows** : double-cliquez sur `Demarrer.bat`

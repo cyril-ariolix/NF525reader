@@ -163,7 +163,7 @@ def _render_invoice_table(rows) -> None:
 def _render_import_section(conn, *, expanded: bool) -> None:
     with st.sidebar.expander("Importer une sauvegarde", expanded=expanded):
         st.caption(
-            "Glissez ici le fichier ExportNF525_….zip reçu de HotSoft, "
+            "Glissez ici le fichier ExportNF525_….zip, "
             "ou indiquez son emplacement sur cet ordinateur."
         )
         local_path = st.text_input("Chemin du fichier ZIP", value="", key="import_path")
@@ -204,7 +204,7 @@ def _run_ingest(conn, path: Path) -> None:
         status.empty()
         progress.empty()
         st.sidebar.error(
-            "Ce fichier n'est pas une sauvegarde HotSoft. "
+            "Ce fichier n'est pas une archive NF525 reconnue. "
             "Le nom doit ressembler à ExportNF525_NomHotel_FR000000.zip. "
             f"({exc})"
         )

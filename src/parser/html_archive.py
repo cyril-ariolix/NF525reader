@@ -1,4 +1,4 @@
-"""HotSoft NF525 HTML journal parser."""
+"""NF525 HTML journal parser."""
 
 from __future__ import annotations
 
