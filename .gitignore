@@ -1,0 +1,14 @@
+ExportNF525_*.zip
+NF525CashData_*.zip
+data/*.db
+data/*.db-wal
+data/*.db-shm
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.cursor/
+dist/

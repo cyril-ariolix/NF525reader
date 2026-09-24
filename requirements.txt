@@ -1,0 +1,5 @@
+streamlit>=1.33
+beautifulsoup4>=4.12
+pandas>=2.0
+fpdf2>=2.7
+pytest>=8.0

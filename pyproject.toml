@@ -1,0 +1,22 @@
+[project]
+name = "nf525reader"
+version = "0.1.0"
+description = "Local NF525 fiscal archive reader for hotel group accounting"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.33",
+    "beautifulsoup4>=4.12",
+    "pandas>=2.0",
+    "fpdf2>=2.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
